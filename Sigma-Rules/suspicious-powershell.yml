@@ -1,0 +1,40 @@
+title: Suspicious PowerShell Command Execution
+id: 8e3f6c9a-7b21-4d45-9c13-2f6a8b5e1d70
+status: experimental
+description: Detects PowerShell execution containing command-line patterns commonly associated with suspicious or malicious activity.
+author: Monalisa Sonkusale
+date: 2026-08-31
+
+logsource:
+  category: process_creation
+  product: windows
+
+detection:
+  selection_image:
+    Image|endswith:
+      - '\powershell.exe'
+      - '\pwsh.exe'
+
+  selection_suspicious:
+    CommandLine|contains:
+      - '-EncodedCommand'
+      - '-enc '
+      - 'FromBase64String'
+      - 'DownloadString'
+      - 'Invoke-WebRequest'
+      - 'Invoke-Expression'
+      - 'Net.WebClient'
+      - 'Start-BitsTransfer'
+
+  condition: selection_image and selection_suspicious
+
+falsepositives:
+  - Legitimate administrative PowerShell scripts
+  - Software deployment or configuration management tools
+  - Approved security automation
+
+level: medium
+
+tags:
+  - attack.execution
+  - attack.t1059.001
