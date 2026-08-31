@@ -1,6 +1,6 @@
 # 🛡️ Cybersecurity Portfolio — Monalisa Sonkusale
 
-Security Operations Engineer with 2.8+ years of experience in SOC operations, security monitoring, incident investigation, threat detection, and detection engineering.
+Security Operations Engineer with 3 years of experience in SOC operations, security monitoring, incident investigation, threat detection, and detection engineering.
 
 This portfolio demonstrates practical skills in **Microsoft Sentinel, Microsoft Defender XDR, KQL, threat hunting, detection engineering, Sigma rules, incident investigation, and MITRE ATT&CK mapping**.
 
