@@ -1,0 +1,24 @@
+// Suspicious Windows Process Execution Hunt
+// Purpose: Identify potentially suspicious Windows utilities
+// commonly abused by attackers.
+
+DeviceProcessEvents
+| where Timestamp > ago(24h)
+| where FileName in~ (
+    "cmd.exe",
+    "certutil.exe",
+    "rundll32.exe",
+    "regsvr32.exe",
+    "mshta.exe",
+    "wmic.exe"
+)
+| project
+    Timestamp,
+    DeviceName,
+    AccountName,
+    FileName,
+    ProcessCommandLine,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine,
+    SHA256
+| order by Timestamp desc
