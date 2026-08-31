@@ -1,147 +1,134 @@
-# 🛡️ Cybersecurity Portfolio
+# 🛡️ Cybersecurity Portfolio — Monalisa Sonkusale
 
-Welcome to my cybersecurity portfolio.
+Security Operations Engineer with 2.8+ years of experience in SOC operations, security monitoring, incident investigation, threat detection, and detection engineering.
 
-I am a Security Operations Engineer with 2.8+ years of experience in Security Operations, SOC monitoring, threat detection, incident investigation, and detection engineering.
-
-This repository demonstrates my practical skills in:
-
-- 🔎 Threat Hunting
-- 🚨 Detection Engineering
-- 📊 KQL (Kusto Query Language)
-- 🛡️ Microsoft Sentinel
-- 🧪 Sigma Detection Rules
-- 🔍 Security Incident Investigation
-- 🎯 MITRE ATT&CK Mapping
-- 🖥️ Windows & Endpoint Security Monitoring
+This portfolio demonstrates practical skills in **Microsoft Sentinel, Microsoft Defender XDR, KQL, threat hunting, detection engineering, Sigma rules, incident investigation, and MITRE ATT&CK mapping**.
 
 ---
 
-## 📂 Portfolio Structure
+## 🔐 Core Security Skills
 
-### 🔎 KQL Hunts
+- Security Operations (SOC)
+- Microsoft Sentinel
+- Microsoft Defender XDR
+- Kusto Query Language (KQL)
+- SIEM Monitoring & Alert Triage
+- Threat Hunting
+- Detection Engineering
+- Incident Investigation
+- Windows Security Event Analysis
+- Endpoint Security Monitoring
+- Sigma Detection Rules
+- MITRE ATT&CK
+- Detection Tuning & False Positive Analysis
 
-Threat-hunting queries designed to identify suspicious activity using security telemetry.
+---
 
-Topics include:
+# 🔎 Portfolio Projects
 
-- Brute-force authentication attempts
+## 🔍 KQL Threat Hunting
+
+Practical KQL hunting queries for Microsoft Sentinel and Microsoft Defender XDR.
+
+Includes investigations for:
+
+- Brute-force authentication
 - Suspicious login activity
-- PowerShell execution
-- Windows process hunting
-- Account compromise indicators
+- Suspicious PowerShell execution
+- Windows process anomalies
 
-📁 `KQL-Hunts/`
+➡️ [View KQL Threat Hunting Projects](./KQL-Hunts/)
 
 ---
 
-### 🚨 Detection Engineering
+## 🚨 Detection Engineering
 
-Detection use cases containing:
+Detection engineering use cases demonstrating the lifecycle from attacker behavior to actionable security detections.
 
-- Detection objective
-- Data sources
-- Detection logic
-- KQL queries
+Includes:
+
+- Suspicious PowerShell detection
+- Failed logins followed by successful authentication
+- New administrator account detection
+- Suspicious Windows process execution
 - MITRE ATT&CK mapping
-- False-positive considerations
-- Investigation steps
-- Recommended response actions
+- Detection tuning recommendations
 
-📁 `Detection-Engineering/`
+➡️ [View Detection Engineering Projects](./Detection-Engineering/)
 
 ---
 
-### 🧪 Sigma Rules
+## 🧪 Sigma Detection Rules
 
-Platform-independent detection rules for identifying suspicious attacker behavior.
+Vendor-neutral Sigma detection rules covering suspicious Windows and PowerShell behaviors.
 
-Examples include:
+Includes:
 
 - Suspicious PowerShell execution
 - Encoded PowerShell commands
-- Suspicious process execution
-- Credential-related activity
+- Suspicious Certutil activity
 
-📁 `Sigma-Rules/`
-
----
-
-### 🛡️ Incident Reports
-
-SOC-style incident investigation scenarios documenting the complete investigation lifecycle.
-
-Each report includes:
-
-- Alert overview
-- Initial triage
-- Investigation
-- Evidence analysis
-- MITRE ATT&CK mapping
-- Containment recommendations
-- Remediation recommendations
-
-📁 `Incident-Reports/`
+➡️ [View Sigma Detection Rules](./Sigma-Rules/)
 
 ---
 
-## 🧰 Technologies & Skills
+## 🛡️ SOC Incident Investigations
 
-| Area | Skills |
+Simulated SOC investigations demonstrating end-to-end incident analysis.
+
+Scenarios include:
+
+- Brute-force authentication investigation
+- Suspicious PowerShell investigation
+- Account compromise investigation
+
+Investigation workflow:
+
+**Alert → Triage → Evidence Collection → Analysis → Scope → MITRE ATT&CK → Containment → Remediation → Detection Improvement**
+
+➡️ [View SOC Incident Reports](./Incident-Reports/)
+
+---
+
+# 🧠 Detection Engineering Approach
+
+My detection workflow follows:
+
+**Threat Behavior → Telemetry → Detection Logic → KQL/Sigma → MITRE ATT&CK → Alert Triage → Investigation → Tuning → Response**
+
+The goal is to create detections that are actionable, explainable, and tuned to reduce unnecessary false positives.
+
+---
+
+# 🧰 Technologies
+
+| Area | Technologies |
 |---|---|
 | SIEM | Microsoft Sentinel |
+| Endpoint Security | Microsoft Defender XDR |
 | Query Language | KQL |
-| Detection | Analytics Rules, Detection Engineering, Sigma |
-| Threat Hunting | Log Analysis, IOC Investigation, Behavioral Analysis |
-| Endpoint | Windows Event Logs, Sysmon, EDR Telemetry |
-| Frameworks | MITRE ATT&CK, Cyber Kill Chain |
-| Incident Response | Alert Triage, Investigation, Containment & Remediation |
-| Automation | SOAR Concepts & Playbooks |
+| Detection Rules | Sigma |
+| Operating System | Windows |
+| Security Telemetry | Windows Event Logs, Process, Authentication & Network Events |
+| Framework | MITRE ATT&CK |
+| Investigation | SIEM & EDR Correlation |
 
 ---
 
-## 🎯 MITRE ATT&CK Coverage
+# 🎯 Portfolio Focus
 
-The detection and hunting scenarios in this portfolio are mapped to relevant MITRE ATT&CK tactics and techniques, including:
+This repository focuses on practical skills relevant to:
 
-- Initial Access
-- Execution
-- Persistence
-- Privilege Escalation
-- Credential Access
-- Discovery
-- Command and Control
+- SOC Analyst
+- Security Operations Engineer
+- Detection Engineer
+- Threat Hunter
+- Incident Response Analyst
 
 ---
 
-## 🚀 Current Learning Focus
+## 📌 Disclaimer
 
-I am currently expanding my knowledge in:
+The scenarios, indicators, usernames, IP addresses, hostnames, and investigation examples in this repository are simulated for educational and portfolio purposes.
 
-- Advanced KQL
-- Microsoft Sentinel
-- Microsoft Defender XDR
-- Detection Engineering
-- Threat Hunting
-- Incident Response
-- Security Automation
-- SC-200: Microsoft Security Operations Analyst
-
----
-
-## 📌 Portfolio Goal
-
-The purpose of this portfolio is to demonstrate practical security operations knowledge through realistic detection, hunting, and incident investigation scenarios.
-
-Each project focuses on understanding:
-
-**Threat → Telemetry → Detection → Investigation → MITRE ATT&CK → Response**
-
----
-
-## 👩‍💻 Author
-
-**Monalisa Sonkusale**
-
-Security Operations Engineer  
-SOC | Detection Engineering | Threat Hunting | Incident Response
+No confidential employer data or production security information is included.
