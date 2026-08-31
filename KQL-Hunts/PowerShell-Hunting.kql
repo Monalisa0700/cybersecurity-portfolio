@@ -1,0 +1,28 @@
+// Suspicious PowerShell Command Hunting
+// Purpose: Hunt for potentially suspicious PowerShell execution
+// using Microsoft Defender XDR DeviceProcessEvents telemetry.
+
+DeviceProcessEvents
+| where Timestamp > ago(24h)
+| where FileName in~ ("powershell.exe", "pwsh.exe")
+| where ProcessCommandLine has_any (
+    "-enc",
+    "-encodedcommand",
+    "FromBase64String",
+    "DownloadString",
+    "Invoke-WebRequest",
+    "Invoke-Expression",
+    "IEX",
+    "Net.WebClient",
+    "Start-BitsTransfer"
+)
+| project
+    Timestamp,
+    DeviceName,
+    AccountName,
+    FileName,
+    ProcessCommandLine,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine,
+    SHA256
+| order by Timestamp desc
