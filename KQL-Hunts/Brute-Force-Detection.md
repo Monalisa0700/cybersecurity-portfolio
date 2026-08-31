@@ -30,21 +30,6 @@ Relevant fields:
 
 ---
 
-## 🔎 KQL Query
-
-```kusto
-SecurityEvent
-| where TimeGenerated > ago(1h)
-| where EventID == 4625
-| summarize
-    FailedAttempts = count(),
-    FirstAttempt = min(TimeGenerated),
-    LastAttempt = max(TimeGenerated),
-    SourceIPs = make_set(IpAddress, 10)
-    by TargetAccount = TargetUserName, Computer
-| where FailedAttempts >= 10
-| order by FailedAttempts desc
-
 
 🧠 Hunting Logic
 
