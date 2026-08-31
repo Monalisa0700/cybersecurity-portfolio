@@ -1,0 +1,33 @@
+title: Suspicious Certutil Download or Decode Activity
+id: 6c17e4d2-93a8-4f51-b720-3a9d8e2f4c61
+status: experimental
+description: Detects Certutil execution with command-line options that may be used to download or decode files.
+author: Monalisa Sonkusale
+date: 2026-08-31
+
+logsource:
+  category: process_creation
+  product: windows
+
+detection:
+  selection_image:
+    Image|endswith: '\certutil.exe'
+
+  selection_behavior:
+    CommandLine|contains:
+      - '-urlcache'
+      - '-decode'
+      - '-decodehex'
+
+  condition: selection_image and selection_behavior
+
+falsepositives:
+  - Legitimate certificate administration
+  - Administrative file decoding
+  - Approved IT scripts
+
+level: medium
+
+tags:
+  - attack.defense-evasion
+  - attack.t1140
